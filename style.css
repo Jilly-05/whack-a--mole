@@ -1,0 +1,82 @@
+main{
+    height: 100%;
+}
+
+.background{
+    position: relative;
+    width: 500px;
+    height: 400px;
+    background-image: url('image/background.png');
+    cursor:url('image/hammer.png') 30 30, help;
+}
+
+.hole{
+    width: 62px;
+    height: 61px;
+    background-image: url('image/hole.png');
+}
+.hole:active{
+    cursor:url("image/hammerhit.png") 30 30,help;
+}
+
+.mole{
+    width: 62px;
+    height: 61px;
+    background-image: url('image/mole.png');
+}
+
+.mole:active{
+    cursor:url("image/hammerhit.png") 30 30,help;
+}
+
+#position1{
+    position: absolute;
+    left: 100px;
+    top:80px;
+}
+
+#position2{
+    position: absolute;
+    left: 220px;
+    top:80px;
+}
+
+#position3{
+    position: absolute;
+    right: 100px;
+    top:80px;
+    
+}
+
+#position4{
+    
+    position: absolute;
+    left: 100px;
+    top:200px;
+}
+
+#position5{
+    position: absolute;
+    left: 220px;
+    top:200px;
+    
+}
+
+#position6{
+    position: absolute;
+    right: 100px;
+    top:200px;
+
+}
+
+.header {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+.active {
+    display: block;
+}
