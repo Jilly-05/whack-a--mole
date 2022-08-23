@@ -8,10 +8,6 @@ const pos6 = document.getElementById('position6');
 // 게임시작
 const start = document.getElementById('play');
 
-//카운트다운
-const countDown = document.getElementById('countDown');
-let counter;
-
 // css용 string 변수화
 const MOLE = "mole";
 const HOLE = "hole";
@@ -32,38 +28,20 @@ const main = () => {
 const playRound = () => {
     //타이머 시작
     moleTimer();
-    start.className="hidden";
-    //제한시간 나중에 어레이로 컨트롤
-    counter=18;
-    countDown.innerText=counter;
 }
 
 // 두더지가 나타나는 타이밍을 정하는 함수
 const moleTimer = () => {
     timerID = requestAnimationFrame(moleTimer);
-    // 3초에 한번씩 등장
     if (timerID % (3 * 60) === 0) {
         pushMole();
     }
     // 두더지가 한 라운드에 5번 나오면 종료한다
     if (moleCount === 5) {
+        cancelAnimationFrame(timerID);
         //moleCount 초기화
         moleCount = 0;
-        if (moleCount===0&& counter===0){
-            cancelAnimationFrame(timerID);
-        }
     }
-    
-    //카운트다운
-    if (timerID % (1*60)===0){
-        counter=counter-1;
-        countDown.innerText=counter;
-        if(counter===0){
-            start.innerText="다음라운드";
-            start.className="active";
-        }
-    }
-    
 }
 
 // 랜덤으로 두더지를 보여주는 함수
@@ -105,4 +83,3 @@ main();
 // }
 
 // test();
-
